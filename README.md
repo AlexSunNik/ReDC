@@ -5,6 +5,7 @@ This repository is for ReDC method introduced in the following paper accepted by
 Revisiting Deformable Convolution for Depth Completion\
 Xinglong Sun, Jean Ponce, Yu-Xiong Wang
 
+Arxiv Link: https://arxiv.org/pdf/2308.01905.pdf
 ## Introduction
 Depth completion, which aims to generate highquality
 dense depth maps from sparse depth maps, has attracted
@@ -49,25 +50,24 @@ Please follow the KITTI depth completion dataset downloading instruction here:
 
 https://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_completion
 
-## Train Baseline
+## Train
 To train the baseline/unpruned network, run:
 ```
-python3 launch_training.py --dataset [DATASET] --method baseline --dest [DEST]
+python3 train.py
 ```
-Example:
-```
-python3 launch_training.py --dataset nyuv2 --method baseline --dest "/data/"
-```
+As mentioned in our paper, we study our deformable refinement module on top of the model backbone based on ENet from the paper PENet (https://arxiv.org/pdf/2103.00783.pdf). For faster convergence of ReDC, you could download the pretrained PENet model from here:
+https://drive.google.com/file/d/1RDdKlKJcas-G5OA49x8OoqcUDiYYZgeM/view?usp=sharing
+
+In train.py, we extract the backbone weights from PENet and initialize the backbone used in ReDC.
 
 ### Pretrained Models
-Pretrained sparsified models can be downloaded here: https://drive.google.com/drive/folders/1wHKdjXkiOQjiKJGkXdUlvBe2oOQzFkJY?usp=sharing
-
+We also release our pretrained model here: 
+https://drive.google.com/file/d/1wE8QLI_fCpGVLKqhqBf5Wg8A08eHJDfv/view?usp=sharing
 
 ## Acknowledgement
 Some dataloading and evaluation code is from:
 https://github.com/JUGGHM/PENet_ICRA2021
 
-Our backbone network is also taken from PENet.
 ## Citations
 If you find this repo useful to your project or research, please cite our paper below:
 
