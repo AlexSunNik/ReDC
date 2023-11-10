@@ -44,6 +44,17 @@ Link to our public results on KITTI test server:
 
 https://www.cvlibs.net/datasets/kitti/eval_depth_detail.php?benchmark=depth_completion&result=c00c3b4d967f78cb9e1522ebd062f763b7668f7d
 
+## Some Visualizations
+<div align="center">
+  <img src="Figs/viz1.png" width="100%">
+  From left to right: groundtruth dense depth map, guidance RGB image, inference from our model, and inference from PENet.
+</div>
+
+<div align="center">
+  <img src="Figs/viz2.png" width="100%">
+  From left to right: groundtruth dense depth map, guidance RGB image, inference from our model, and inference from PENet.
+</div>
+
 ## Prerequisites
 ### Datasets
 Please follow the KITTI depth completion dataset downloading instruction here:
